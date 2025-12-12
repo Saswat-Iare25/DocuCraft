@@ -1,0 +1,22 @@
+/* Mobile View */
+@media (max-width: 768px) {
+    .container { 
+        flex-direction: column; 
+        overflow: auto; 
+    }
+    .editor-panel { 
+        width: 100%; 
+        height: auto; 
+        border-right: none;
+        border-bottom: 1px solid #ddd;
+    }
+    .preview-panel { 
+        width: 100%; 
+        height: auto; 
+    }
+    .a4-page { 
+        width: 100%; 
+        padding: 10mm; 
+        transform: scale(0.9); /* Slight scale down for small screens */
+    }
+}

@@ -1,0 +1,91 @@
+/* --- Default Theme Variables --- */
+:root {
+    --theme-color: #3498db; /* Default Blue */
+    --text-color: #2c3e50;
+    --border-color: #ccc;
+}
+
+/* Preview Panel Container */
+.preview-panel {
+    width: 60%;
+    background-color: #555;
+    padding: 2rem;
+    overflow-y: auto;
+    display: flex;
+    justify-content: center;
+}
+
+/* A4 Paper Simulation */
+.a4-page {
+    background: white;
+    width: 210mm;
+    min-height: 297mm;
+    padding: 20mm;
+    box-shadow: 0 0 15px rgba(0,0,0,0.3);
+    color: #333;
+}
+
+/* --- Resume Header Styling --- */
+.resume-header { text-align: center; margin-bottom: 25px; }
+
+/* Profile Photo Styling */
+#previewPhoto {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 3px solid var(--theme-color);
+    margin-bottom: 15px;
+}
+
+.resume-header h1 { 
+    font-size: 2.5rem; 
+    text-transform: uppercase; 
+    color: var(--text-color); 
+}
+
+.resume-header p { 
+    font-size: 1.2rem; 
+    color: var(--theme-color); /* Uses dynamic theme color */
+    margin-bottom: 10px; 
+    font-weight: 600;
+}
+
+.contact-info { font-size: 0.9rem; color: #555; }
+
+/* --- Section Styling --- */
+.resume-section { margin-bottom: 20px; }
+
+.resume-section h4 { 
+    text-transform: uppercase; 
+    font-size: 1.1rem; 
+    color: var(--theme-color); /* Uses dynamic theme color */
+    margin-bottom: 5px; 
+}
+
+.resume-section hr { 
+    border: 0; 
+    border-top: 2px solid var(--theme-color); /* Uses dynamic theme color */
+    margin-bottom: 10px;
+    opacity: 0.5;
+}
+
+.resume-section p, .resume-section li { 
+    font-size: 0.95rem; 
+    line-height: 1.5; 
+}
+
+/* Dynamic Item Styling */
+.experience-item, .education-item { margin-bottom: 15px; }
+
+.experience-item h5, .education-item h5 { 
+    font-size: 1rem; 
+    color: #333; 
+    font-weight: bold;
+}
+
+.company-name { 
+    font-style: italic; 
+    color: #666; 
+    font-size: 0.9rem; 
+}

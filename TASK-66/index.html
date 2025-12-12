@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DocuCraft - Resume Builder</title>
+    
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/template1.css">
+    <link rel="stylesheet" href="css/responsive.css">
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
+</head>
+<body>
+
+    <header class="navbar">
+        <div class="logo">
+            <i class="fas fa-file-alt"></i> DocuCraft
+        </div>
+        <button id="downloadBtn" class="btn-primary">
+            <i class="fas fa-download"></i> Download PDF
+        </button>
+    </header>
+
+    <div class="container">
+        <section class="editor-panel">
+            <h2><i class="fas fa-edit"></i> Editor</h2>
+            
+            <div class="form-section highlight-section">
+                <h3>Design & Photo</h3>
+                
+                <label>Profile Photo</label>
+                <input type="file" id="photoInput" accept="image/*">
+
+                <label>Theme Color</label>
+                <div class="theme-picker">
+                    <button class="theme-btn" style="background:#3498db;" onclick="setTheme('#3498db')"></button>
+                    <button class="theme-btn" style="background:#e74c3c;" onclick="setTheme('#e74c3c')"></button>
+                    <button class="theme-btn" style="background:#2ecc71;" onclick="setTheme('#2ecc71')"></button>
+                    <button class="theme-btn" style="background:#f1c40f;" onclick="setTheme('#f1c40f')"></button>
+                    <input type="color" id="customColor" oninput="setTheme(this.value)" value="#3498db">
+                </div>
+            </div>
+
+            <div class="form-section">
+                <h3>Personal Information</h3>
+                <label>Full Name</label>
+                <input type="text" id="nameInput" placeholder="John Doe">
+                
+                <label>Job Title</label>
+                <input type="text" id="titleInput" placeholder="Software Engineer">
+
+                <label>Phone</label>
+                <input type="text" id="phoneInput" placeholder="+1 234 567 890">
+
+                <label>Email</label>
+                <input type="email" id="emailInput" placeholder="john@example.com">
+                
+                <label>LinkedIn / Portfolio</label>
+                <input type="text" id="linkInput" placeholder="linkedin.com/in/johndoe">
+            </div>
+
+            <div class="form-section">
+                <h3>Professional Summary</h3>
+                <textarea id="summaryInput" rows="4" placeholder="Briefly describe your career..."></textarea>
+            </div>
+
+            <div class="form-section">
+                <h3>Experience</h3>
+                <div id="experience-list">
+                    </div>
+                <button onclick="addExperience()" class="btn-secondary"><i class="fas fa-plus"></i> Add Job</button>
+            </div>
+
+            <div class="form-section">
+                <h3>Education</h3>
+                <div id="education-list">
+                    </div>
+                <button onclick="addEducation()" class="btn-secondary"><i class="fas fa-plus"></i> Add Education</button>
+            </div>
+
+            <div class="form-section">
+                <h3>Skills</h3>
+                <input type="text" id="skillsInput" placeholder="HTML, CSS, JS, React">
+            </div>
+        </section>
+
+        <section class="preview-panel">
+            <div id="resume-preview" class="a4-page">
+                <header class="resume-header">
+                    <img id="previewPhoto" src="" alt="Profile Photo" style="display:none;">
+                    
+                    <h1 id="previewName">John Doe</h1>
+                    <p id="previewTitle">Software Engineer</p>
+                    <div class="contact-info">
+                        <span id="previewPhone">+1 234 567 890</span> | 
+                        <span id="previewEmail">john@example.com</span> |
+                        <span id="previewLink">linkedin.com/in/johndoe</span>
+                    </div>
+                </header>
+
+                <div class="resume-body">
+                    <section class="resume-section">
+                        <h4>Summary</h4>
+                        <hr>
+                        <p id="previewSummary">Passionate developer with experience in...</p>
+                    </section>
+
+                    <section class="resume-section">
+                        <h4>Experience</h4>
+                        <hr>
+                        <div id="previewExperienceList">
+                            </div>
+                    </section>
+
+                    <section class="resume-section">
+                        <h4>Education</h4>
+                        <hr>
+                        <div id="previewEducationList">
+                            </div>
+                    </section>
+
+                    <section class="resume-section">
+                        <h4>Skills</h4>
+                        <hr>
+                        <p id="previewSkills">HTML, CSS, JavaScript, React</p>
+                    </section>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <script src="js/app.js"></script>
+    <script src="js/pdfExport.js"></script>
+</body>
+</html>
