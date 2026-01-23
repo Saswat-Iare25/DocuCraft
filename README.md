@@ -1,6 +1,6 @@
 # DocuCraft
 
-live preview - https://saswat-iare25.github.io/DocuCraft/
+live preview - https://guddu-06.github.io/DocuCraft/
 
 
 # Task 66: DocuCraft - Professional Resume Builder
